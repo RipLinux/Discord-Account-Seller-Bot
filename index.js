@@ -7,16 +7,16 @@ app.use('/ping', (req, res) => {
   res.send(new Date());
 });
 
-const Discord = require("discord.js"); //Amine#9092
+const Discord = require("discord.js"); 
 const client = new Discord.Client();
-const db = require("pro.db"); //Amine#9092
+const db = require("pro.db"); 
 
 let owner = "1047263063721660496"; //اي دي حقك
 let sv = '1207792576657367060'//اايدي سرفرك
 let prefix = db.get("prefix") || "$"; ///برفكس
 
 client.on("ready", () => {
-  //Amine#9092
+  
   var fs = require('fs');
 setInterval(() => {
       fs.readFile('json.sqlite', 'utf8', function(err, contents) {
@@ -28,10 +28,7 @@ setInterval(() => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
+
 client.on('guildCreate', guild => {
   if(guild.id !== sv) return guild.leave()
     })
@@ -39,7 +36,7 @@ client.on('guildCreate', guild => {
 
 
 client.on("message", async message => {
-  //Amine#9092
+
   let prefixx = "s";
   const args = message.content
     .slice(prefixx.length)
@@ -59,15 +56,12 @@ client.on("message", async message => {
   }
 });
 
-///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
+
 
 client.on("message", async message => {
   const args = message.content  .slice(prefix.length) .trim() .split(/ +/);
   const command = args.shift().toLowerCase();
-  if (!message.content.startsWith(prefix) || message.author.bot) return; //Amine#9092
+  if (!message.content.startsWith(prefix) || message.author.bot) return; 
   let hi = args.join(" ");
   if (command === "status") {
     if (!owner.includes(message.author.id)) return; //Amine#9092
@@ -98,10 +92,7 @@ client.on("message", async message => {
       message.channel.send("> **✅ تم قفل المتجر بنجاح !**");
     }
   }
-  ///https://discord.gg/JDHp5nPM6Z
-  ///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-  ///Amine#9092
-  ///Rà3d#0088
+
 
   if (command === "setprice-netflix") {
     if (!owner.includes(message.author.id)) return;
@@ -109,7 +100,7 @@ client.on("message", async message => {
     let tax = Math.floor(args[0] * (20 / 19) + 1);
     if (!tax)
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() //
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -130,10 +121,6 @@ client.on("message", async message => {
     db.set("price1", tax);
     message.channel.send("> **✅ تم تحديد سعر حسابات النت فلكس بنجاح !**");
   }
-  ///https://discord.gg/JDHp5nPM6Z
-  ///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-  ///Amine#9092
-  ///Rà3d#0088
 
   if (command === "setprice-fulldata") {
     if (!owner.includes(message.author.id)) return;
@@ -162,10 +149,6 @@ client.on("message", async message => {
     db.set("price3", tax);
     message.channel.send("> **✅ تم تحديد سعر حسابات الفل داتا بنجاح !**");
   }
-  ///https://discord.gg/JDHp5nPM6Z
-  ///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-  ///Amine#9092
-  ///Rà3d#0088
 
   if (command === "add-netflix") {
     //Amine#9092
@@ -214,10 +197,6 @@ client.on("message", async message => {
     db.push("account1", hi); //Amine#9092
     message.channel.send("> **✅ تم اضافه حساب النت فلكس بنجاح !**");
   }
-  ///https://discord.gg/JDHp5nPM6Z
-  ///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-  ///Amine#9092
-  ///Rà3d#0088
 
   if (command === "delete-netflix") {
     if (!owner.includes(message.author.id)) return;
@@ -229,10 +208,6 @@ client.on("message", async message => {
     db.delete("account2");
     message.channel.send("> **✅ تم حذف جميع حسابات الفل داتا بنجاح !**");
   }
-  ///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
 
 
   if (command === "buy") {
@@ -740,10 +715,6 @@ client.on("message", async message => {
     );
   }
 });
-///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
 
 client.on("message", async message => {
   //Amine#9092
@@ -875,10 +846,6 @@ client.on("message", async message => {
     );
   }
 });
-///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
 
 client.on("message", async message => {
   let prefix = await db.get("prefix");
@@ -911,10 +878,6 @@ client.on("message", async message => {
     });
   }
 });
-///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
 
 client.on("message", async message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -955,10 +918,7 @@ client.on("message", async message => {
   }
 });
 
-///https://discord.gg/JDHp5nPM6Z
-///https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg/videos
-///Amine#9092
-///Rà3d#0088
+
 
 
 client.login(process.env.token); ///التوكن تنحط في ملف .env
