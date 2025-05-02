@@ -64,9 +64,9 @@ client.on("message", async message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return; 
   let hi = args.join(" ");
   if (command === "status") {
-    if (!owner.includes(message.author.id)) return; //Amine#9092
+    if (!owner.includes(message.author.id)) return; 
     if (!args[0])  return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -76,8 +76,8 @@ client.on("message", async message => {
             `Usage : ${prefix}status \`TYPE\`\n\n \`\`\`TYPE = [ open : لفتح المتجر \n close : لغلق المتجر ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -110,8 +110,8 @@ client.on("message", async message => {
             `Usage : ${prefix}setprice-netflix \`PRICE\`\n\n \`\`\`PRICE = [ ادخل سعر الحساب ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -128,7 +128,7 @@ client.on("message", async message => {
     let tax = Math.floor(args[0] * (20 / 19) + 1);
     if (!tax)
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -138,8 +138,8 @@ client.on("message", async message => {
             `Usage : ${prefix}setprice-fulldata \`PRICE\`\n\n \`\`\`PRICE = [ ادخل سعر الحساب ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -151,11 +151,11 @@ client.on("message", async message => {
   }
 
   if (command === "add-netflix") {
-    //Amine#9092
-    if (!owner.includes(message.author.id)) return; //Amine#9092
+    
+    if (!owner.includes(message.author.id)) return; 
     if (!args[0])
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -165,8 +165,8 @@ client.on("message", async message => {
             `Usage : ${prefix}add-netflix \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -174,7 +174,7 @@ client.on("message", async message => {
       );
     if (!message.content.includes(":"))
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -184,8 +184,8 @@ client.on("message", async message => {
             `Usage : ${prefix}add-netflix \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -193,8 +193,8 @@ client.on("message", async message => {
       );
     if (!db.has("account1")) {
       db.set("account1", []);
-    } //Amine#9092
-    db.push("account1", hi); //Amine#9092
+    } 
+    db.push("account1", hi); 
     message.channel.send("> **✅ تم اضافه حساب النت فلكس بنجاح !**");
   }
 
@@ -212,7 +212,7 @@ client.on("message", async message => {
 
   if (command === "buy") {
     const cooldown = new Set();
-    //Amine#9092
+    
     let price1 = await db.get("price");
     let price2 = await db.get("price1");
     let price3 = db.get("price3");
@@ -249,8 +249,8 @@ client.on("message", async message => {
         true
       )
       .setFooter(
-        `Developed by : Amine , Ra3d`,
-        `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+        `Developed by : Anas `,
+        ``
       );
     message.channel.send(buys).then(msg => {
       msg.react("📺");
@@ -263,8 +263,8 @@ client.on("message", async message => {
                 \`\`\`#credit <@${owner}> ${price2}\`\`\``
         )
         .setFooter(
-          `Developed by : Amine , Ra3d`,
-          `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+          `Developed by : Anas `,
+          ``
         )
         .setTimestamp()
         .addField(
@@ -283,11 +283,11 @@ client.on("message", async message => {
           const reaction = collected.first();
           if (reaction.emoji.name === "📺") {
             msg.delete();
-            const account1 = db.get("account1"); //Amine#9092
+            const account1 = db.get("account1"); 
             if (!account1 || !account1[0])
               return message.channel.send(
                 `> **:x: لا يوجد حسابات في المخزن ! **`
-              ); //Amine#9092
+              ); 
             if (!price1 || !price2)
               return message.channel.send(
                 `> **:x: برجاء تحديد سعر حسابات النت فلكس**`
@@ -356,7 +356,7 @@ client.on("message", async message => {
                                 const filtered = account1.filter(
                                   accs => accs !== acc
                                 );
-                                db.set("account1", filtered); //Amine#9092
+                                db.set("account1", filtered); 
                               })
                               .catch(() =>
                                 message.reply(
@@ -384,7 +384,7 @@ client.on("message", async message => {
 
           if (reaction.emoji.name === "🎮") {
             msg.delete();
-            const account2 = db.get("account2"); //Amine#9092
+            const account2 = db.get("account2"); 
             if (!account2 || !account2[0])
               return message.channel.send(
                 `> **:x: لا يوجد حسابات في المخزن ! **`
@@ -401,8 +401,8 @@ client.on("message", async message => {
                             \`\`\`#credit <@${owner}> ${price3}\`\`\``
               )
               .setFooter(
-                `Developed by : Amine , Ra3d`,
-                `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+                `Developed by : Anas `,
+                ``
               )
               .setTimestamp()
               .addField(
@@ -419,7 +419,7 @@ client.on("message", async message => {
               response.content.includes(Number(price4));
 
             message.channel.send(prizeembed).then(s => {
-              //Amine#9092
+              
 
               const fr = r =>
                 message.author.id === r.author.id &&
@@ -474,7 +474,7 @@ client.on("message", async message => {
                                 accs => accs !== acc
                               );
 
-                              db.set("account2", filtered); //Amine#9092
+                              db.set("account2", filtered); 
                             })
                             .catch(() =>
                               message.reply(
@@ -605,21 +605,21 @@ client.on("message", async message => {
             `
         )
         .setFooter(
-          `Developed by : Amine , Ra3d`,
-          `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+          `Developed by : Anas `,
+          ``
         )
         .setTimestamp()
     );
   }
 
   if (command === "remove-netflix") {
-    //Amine#9092
+    
     if (!owner.includes(message.author.id) && !db.has(message.author.id))
       return;
     if (message.channel.type === "dm") return;
     if (!args[0])
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -629,35 +629,35 @@ client.on("message", async message => {
             `Usage : ${prefix}remove-netflix \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
           .setTitle("Remove Netflix Account Command")
-      ); //Amine#9092
-    const account = db.get("account1"); //Amine#9092
+      ); 
+    const account = db.get("account1"); 
     if (!account || !account[0])
-      return message.channel.send(`> **:x: لا يوجد حسابات في المخزن ! **`); //Amine#9092
+      return message.channel.send(`> **:x: لا يوجد حسابات في المخزن ! **`); 
     if (!message.content.includes(":"))
       return message.channel.send(
         new Discord.MessageEmbed()
           .setColor("RANDOM")
           .setDescription(`> usage : ${prefix}remove-netflix [adress:email]`)
-      ); //Amine#9092
+      ); 
     const filtered = account.filter(accs => accs !== args[0]);
-    db.set("account1", filtered); //Amine#9092
+    db.set("account1", filtered); 
     message.channel.send("> **✅ تم ازاله الحساب بنجاح !**");
-  } //Amine#9092
+  } 
   if (command === "display-netflix") {
-    //Amine#9092
-    if (message.channel.type === "dm") return; //Amine#9092
-    if (!owner.includes(message.author.id)) return; //Amine#9092
+    
+    if (message.channel.type === "dm") return; 
+    if (!owner.includes(message.author.id)) return; 
     const accounts = db.get("account1");
     const text =
       accounts && accounts[0]
         ? accounts.join("\n")
-        : "> **:x: لا يوجد حسابات في المخزن ! **!"; //Amine#9092
+        : "> **:x: لا يوجد حسابات في المخزن ! **!"; 
     message.channel.send(
       new Discord.MessageEmbed()
         .setAuthor(
@@ -667,14 +667,14 @@ client.on("message", async message => {
         .setTitle("جميع حسابات النت فلكس :")
         .setDescription(`\`\`\`${text}\`\`\``)
         .setFooter(
-          `Developed by : Amine , Ra3d`,
-          `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+          `Developed by : Anas `,
+          ``
         )
         .setTimestamp()
     );
   }
   if (command === "restart") {
-    if (!owner.includes(message.author.id)) return; //Amine#9092
+    if (!owner.includes(message.author.id)) return; 
     message.channel
       .send(`جاري عمل الريستارت ..`)
       .then(() => client.destroy())
@@ -684,7 +684,7 @@ client.on("message", async message => {
       });
   }
   if (command === "help") {
-    if (message.channel.type === "dm") return; //Amine#9092
+    if (message.channel.type === "dm") return; 
     message.channel.send(
       new Discord.MessageEmbed()
         .setAuthor(
@@ -704,21 +704,21 @@ client.on("message", async message => {
              \`delete-fulldata\`, \`delete-netflix\`, \`status\`, \`setname\`, \`setavatar\``
         )
         .setFooter(
-          `Developed by : Amine , Ra3d`,
-          `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+          `Developed by : Anas `,
+          ``
         )
         .setTimestamp()
         .addField(
           `Links`,
-          `[Ra3d's Studio](https://discord.gg/Gw72qQQWPn)\n[Youtube Tutorial](https://www.youtube.com/channel/UCAVB8JOSy_y3qoR7bIsiAYg)`
+          ''
         )
     );
   }
 });
 
 client.on("message", async message => {
-  //Amine#9092
-  if (!message.content.startsWith(prefix) || message.author.bot) return; //Amine#9092
+  
+  if (!message.content.startsWith(prefix) || message.author.bot) return; 
   const args = message.content
     .slice(prefix.length)
     .trim()
@@ -726,11 +726,11 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   let hi = args.join(" ");
   if (command === "add-fulldata") {
-    //Amine#9092
-     if (!owner.includes(message.author.id)) return; //Amine#9092
+    
+     if (!owner.includes(message.author.id)) return; 
     if (!args[0])
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -740,8 +740,8 @@ client.on("message", async message => {
             `Usage : ${prefix}add-fulldata \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -749,7 +749,7 @@ client.on("message", async message => {
       );
     if (!message.content.includes(":"))
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -759,8 +759,8 @@ client.on("message", async message => {
             `Usage : ${prefix}add-fulldata \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
@@ -768,18 +768,18 @@ client.on("message", async message => {
       );
     if (!db.has("account2")) {
       db.set("account2", []);
-    } //Amine#9092
-    db.push("account2", hi); //Amine#9092
+    } 
+    db.push("account2", hi); 
     message.channel.send("> **✅ تم اضافه حسابات الفل داتا بنجاح !**");
   }
   if (command === "remove-fulldata") {
-    //Amine#9092
+    
     if (!owner.includes(message.author.id) && !db.has(message.author.id))
-      return; //Amine#9092
+      return; 
     if (message.channel.type === "dm") return;
     if (!args[0])
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -789,19 +789,19 @@ client.on("message", async message => {
             `Usage : ${prefix}remove-fulldata \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
           .setTitle("Remove Fulldata Accounts Command")
-      ); //Amine#9092
-    const account = db.get("account2"); //Amine#9092
+      ); 
+    const account = db.get("account2"); 
     if (!account || !account[0])
       return message.channel.send(`> **:x: لا يوجد حسابات في المخزن ! **`);
     if (!message.content.includes(":"))
       return message.channel.send(
-        new Discord.MessageEmbed() //Amine#9092
+        new Discord.MessageEmbed() 
           .setAuthor(
             message.author.username,
             message.author.displayAvatarURL({ dynamic: true })
@@ -811,15 +811,15 @@ client.on("message", async message => {
             `Usage : ${prefix}remove-fulldata \`ACCOUNT\`\n\n \`\`\`ACCOUNT = [ EMAIL:PASSWORD ]\`\`\``
           )
           .setFooter(
-            `Developed by : Amine , Ra3d`,
-            `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+            `Developed by : Anas `,
+            ``
           )
           .setColor("RED")
           .setTimestamp()
           .setTitle("Remove Fulldata Accounts Command")
-      ); //Amine#9092
+      ); 
     const filtered = account.filter(accs => accs !== args[0]);
-    db.set("account2", filtered); //Amine#9092
+    db.set("account2", filtered); 
     message.channel.send("> **✅ تم ازاله الحساب بنجاح !**");
   }
   if (command === "display-fulldata") {
@@ -829,7 +829,7 @@ client.on("message", async message => {
     const text =
       accounts && accounts[0]
         ? accounts.join("\n")
-        : "> **:x: لا يوجد حسابات في المخزن ! **"; //Amine#9092
+        : "> **:x: لا يوجد حسابات في المخزن ! **"; 
     message.channel.send(
       new Discord.MessageEmbed()
         .setAuthor(
@@ -839,8 +839,8 @@ client.on("message", async message => {
         .setTitle("جميع حسابات الفل داتا :")
         .setDescription(`\`\`\`${text}\`\`\``)
         .setFooter(
-          `Developed by : Amine , Ra3d`,
-          `https://cdn.discordapp.com/icons/744592615592296539/9611fcdda6f1f6cd5470dbc02ba0af64.png?size=1024`
+          `Developed by : Anas `,
+          ``
         )
         .setTimestamp()
     );
